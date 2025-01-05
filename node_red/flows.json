@@ -1,0 +1,210 @@
+[
+    {
+        "id": "bd321337016035e9",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a48e4e0ad5c7b64f",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "node_red_db",
+        "name": "node red database",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "bb8d0c98e580f297",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "node_red_db",
+        "name": "influxdb_query",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "b3bc2bcbbb07e8c2",
+        "type": "influxdb out",
+        "z": "bd321337016035e9",
+        "influxdb": "a48e4e0ad5c7b64f",
+        "name": "weather_out",
+        "measurement": "weather",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 450,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a7361e8aa246d2b5",
+        "type": "inject",
+        "z": "bd321337016035e9",
+        "name": "weather_inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"temperature\":25.5,\"humidity\":60,\"location\":\"office\"}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "b3bc2bcbbb07e8c2"
+            ]
+        ]
+    },
+    {
+        "id": "e4420fbe188cf61c",
+        "type": "inject",
+        "z": "bd321337016035e9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "82590f6ecaede7f0"
+            ]
+        ]
+    },
+    {
+        "id": "82590f6ecaede7f0",
+        "type": "influxdb in",
+        "z": "bd321337016035e9",
+        "influxdb": "bb8d0c98e580f297",
+        "name": "influxdb_query",
+        "query": "SELECT * FROM weather WHERE location='office';\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 220,
+        "y": 380,
+        "wires": [
+            [
+                "7e8e0e32f369bee1",
+                "56d65997816f3c28"
+            ]
+        ]
+    },
+    {
+        "id": "3df5b030b7238c77",
+        "type": "debug",
+        "z": "bd321337016035e9",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7e8e0e32f369bee1",
+        "type": "function",
+        "z": "bd321337016035e9",
+        "name": "string func",
+        "func": "// Extract the payload array\nlet results = msg.payload;\n\n// Format the array as a readable string\nmsg.payload = results.map(row =>\n    `Time: ${row.time}, Temperature: ${row.temperature}°C, Humidity: ${row.humidity}%, Location: ${row.location}`\n).join('\\n');\n\n// Return the formatted message\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "3df5b030b7238c77"
+            ]
+        ]
+    },
+    {
+        "id": "87f2f7ccc202b528",
+        "type": "debug",
+        "z": "bd321337016035e9",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "56d65997816f3c28",
+        "type": "function",
+        "z": "bd321337016035e9",
+        "name": "json func",
+        "func": "// Convert the payload array to a JSON string\nmsg.payload = JSON.stringify(msg.payload, null, 2);\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 500,
+        "wires": [
+            [
+                "87f2f7ccc202b528"
+            ]
+        ]
+    }
+]
