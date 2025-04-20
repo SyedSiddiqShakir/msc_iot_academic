@@ -7,5 +7,5 @@ Covers topics such as:
 - Sensor data processing
 - Visualization and analytics
 - Human-computer interaction for IoT systems
-- 
+
 This is a working repository of academic progress and project artifacts.
