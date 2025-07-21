@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.0.6">
   <diagram name="Page-1" id="dmJ5klp1wzARZ7jFiC1e">
-    <mxGraphModel dx="1426" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="815" dy="428" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -31,7 +31,7 @@
         <mxCell id="6Qgw9M841O2UvQe1TRWj-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="yowfagcIyN5PcVFSIJR1-11" target="yowfagcIyN5PcVFSIJR1-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yowfagcIyN5PcVFSIJR1-11" value="Line Detection&lt;div&gt;(Black &amp;amp; White Pixels&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="yowfagcIyN5PcVFSIJR1-11" value="Line Detection&lt;div&gt;(Black Pixels&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="639" y="130" width="150" height="50" as="geometry" />
         </mxCell>
         <mxCell id="yowfagcIyN5PcVFSIJR1-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="yowfagcIyN5PcVFSIJR1-15" target="yowfagcIyN5PcVFSIJR1-25" edge="1">
@@ -51,17 +51,17 @@
         </mxCell>
         <mxCell id="6Qgw9M841O2UvQe1TRWj-5" value="Normal Read" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="yowfagcIyN5PcVFSIJR1-52">
           <mxGeometry x="0.3836" y="2" relative="1" as="geometry">
-            <mxPoint y="1" as="offset" />
+            <mxPoint x="-2" y="9" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yowfagcIyN5PcVFSIJR1-15" value="Junction Detection&lt;div&gt;(Pixel Percentage)&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="834" y="190" width="155" height="155" as="geometry" />
         </mxCell>
-        <mxCell id="6Qgw9M841O2UvQe1TRWj-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="yowfagcIyN5PcVFSIJR1-16" target="yowfagcIyN5PcVFSIJR1-19">
+        <mxCell id="6Qgw9M841O2UvQe1TRWj-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="yowfagcIyN5PcVFSIJR1-16" target="6Qgw9M841O2UvQe1TRWj-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yowfagcIyN5PcVFSIJR1-16" value="PID of&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="699.5" y="340" width="150" height="50" as="geometry" />
+        <mxCell id="yowfagcIyN5PcVFSIJR1-16" value="Line Detection&lt;div&gt;(White Pixels)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="699.5" y="300" width="150" height="50" as="geometry" />
         </mxCell>
         <mxCell id="yowfagcIyN5PcVFSIJR1-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="yowfagcIyN5PcVFSIJR1-19" target="yowfagcIyN5PcVFSIJR1-28" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -159,6 +159,12 @@
         </mxCell>
         <mxCell id="yowfagcIyN5PcVFSIJR1-44" value="Stop&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="29" y="417.5" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Qgw9M841O2UvQe1TRWj-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6Qgw9M841O2UvQe1TRWj-12" target="yowfagcIyN5PcVFSIJR1-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6Qgw9M841O2UvQe1TRWj-12" value="Line Box Size" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="699.5" y="380" width="150" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
