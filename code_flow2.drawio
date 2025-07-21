@@ -43,7 +43,7 @@
         </mxCell>
         <mxCell id="yowfagcIyN5PcVFSIJR1-27" value="Plus Junction Found" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="yowfagcIyN5PcVFSIJR1-26" vertex="1" connectable="0">
           <mxGeometry x="0.1916" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="-1" y="19" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yowfagcIyN5PcVFSIJR1-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="yowfagcIyN5PcVFSIJR1-15" target="yowfagcIyN5PcVFSIJR1-16" edge="1">
